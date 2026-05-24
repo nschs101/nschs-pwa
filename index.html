@@ -2,32 +2,43 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0" />
 
   <title>NSCHS</title>
 
   <link rel="manifest" href="manifest.json" />
+
   <meta name="theme-color" content="#0F766E" />
 
-  <script>
-    if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.register('./service-worker.js');
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
     }
 
-    window.location.href =
-      "https://sites.google.com/view/nschs101/home";
-  </script>
+    iframe {
+      border: none;
+      width: 100%;
+      height: 100%;
+    }
+  </style>
 </head>
 
 <body>
-  <div style="
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    height:100vh;
-    font-family:Arial,sans-serif;
-  ">
-    Loading NSCHS...
-  </div>
+  <iframe
+    src="https://sites.google.com/view/nschs101/home"
+    allowfullscreen>
+  </iframe>
+
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker
+        .register('./service-worker.js');
+    }
+  </script>
 </body>
 </html>
